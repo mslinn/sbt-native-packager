@@ -5,7 +5,7 @@ This is a work in process project.  The goal is to be able to bundle up Scala so
 
 ## Installation ##
 
-Add this to your project's project/plugins.sbt`:
+Add this to your project's `project/plugins.sbt`:
 
     resolvers += "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"
     
