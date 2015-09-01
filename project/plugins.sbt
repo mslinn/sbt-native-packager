@@ -14,3 +14,8 @@ libraryDependencies <+= (sbtVersion) { sv =>
 
 // Scripted plugin needs to declare this as a dependency
 libraryDependencies += "jline" % "jline" % "2.11"
+
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
+
+addSbtPlugin("me.lessis" % "bintray-sbt" % "0.2.0")
+

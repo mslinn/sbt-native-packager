@@ -1,8 +1,14 @@
+import bintray.Keys._
+
 sbtPlugin := true
+
+version      := "0.6.3"
+
+scalaVersion := "2.10.5"
 
 name := "sbt-native-packager"
 
-organization := "com.typesafe.sbt"
+organization := "com.micronautics.sbt"
 
 scalacOptions in Compile += "-deprecation"
 
@@ -17,19 +23,22 @@ com.typesafe.sbt.SbtSite.SiteKeys.siteMappings <+= (baseDirectory) map { dir =>
 
 site.sphinxSupport()
 
-ghpages.settings
+//ghpages.settings
 
-git.remoteRepo := "git@github.com:sbt/sbt-native-packager.git"
+//git.remoteRepo := "git@github.com:sbt/sbt-native-packager.git"
 
-publishTo := Some(Resolver.url("sbt-plugin-releases", new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns))
+//publishTo := Some(Resolver.url("sbt-plugin-releases", new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns))
 
-publishMavenStyle := false
+//publishMavenStyle := false
 
 scriptedSettings
 
 scriptedLaunchOpts <+= version apply { v => "-Dproject.version="+v }
 
 
+bintrayPublishSettings
+bintrayOrganization in bintray := Some("micronautics")
+repository in bintray := "scala"
 
-
+publishArtifact in Test := false
 

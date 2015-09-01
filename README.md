@@ -5,11 +5,11 @@ This is a work in process project.  The goal is to be able to bundle up Scala so
 
 ## Installation ##
 
-Add the following to your `project/plugins.sbt` file:
-    
+Add this to your project's `build.sbt`:
 
-    addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.6.2")
+    resolvers += "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"
 
+    libraryDependencies += "com.micronautics" %% "sbt-native-packager" % "0.6.3" withSources()
 
 Then, in the project you wish to use the plugin, You need to select what kind of project you are packaging:
 
